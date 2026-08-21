@@ -18,4 +18,6 @@ export interface UpdateStudentDTO{
    score?: number ; 
    nom?: string ;
 }
+
+
   

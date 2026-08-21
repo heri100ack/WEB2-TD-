@@ -1,6 +1,7 @@
 
 import { Student, CreateStudentDTO, UpdateStudentDTO } from '../model/Student';
 import  pool  from '../db';
+
 export class StudentRepository {
   async findAll(): Promise<Student[]> {
     const recup = await pool.query('SELECT * FROM student');
@@ -52,9 +53,9 @@ export class StudentRepository {
 
   async delete(id: number): Promise<Student | null> {
     const recup = await pool.query(
-      'DELETE * FROM student WHERE id = $1',
+      'DELETE * FROM student WHERE id =$1',
       [id]
     )
     return recup.rows[0];
-  }
+  } 
 }
